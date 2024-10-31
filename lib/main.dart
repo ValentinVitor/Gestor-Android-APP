@@ -59,10 +59,18 @@ class LoginPage extends StatelessWidget {
                 ),
                 obscureText: true,
               ),
+              SizedBox(height: 10),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => ForgotPasswordPage(),
+                  ));
+                },
+                child: Text('Esqueci minha senha'),
+              ),
               SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  // Ação do botão de login
                   print("Email: ${emailController.text}");
                   print("Senha: ${passwordController.text}");
                 },
