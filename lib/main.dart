@@ -62,9 +62,10 @@ class LoginPage extends StatelessWidget {
               SizedBox(height: 10),
               TextButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => ForgotPasswordPage(), // Correção: Página ForgotPasswordPage implementada
-                  ));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+                  );
                 },
                 child: Text('Esqueci minha senha'),
               ),
@@ -82,6 +83,16 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 20),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUpPage()),
+                  );
+                },
+                child: Text("Não tem conta? Cadastre-se"),
+              ),
             ],
           ),
         ),
@@ -89,14 +100,15 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+class SignUpPage extends StatelessWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
-// Implementação correta da ForgotPasswordPage
-class ForgotPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Redefinir Senha'),
+        title: Text('Cadastro'),
       ),
       body: Center(
         child: Padding(
@@ -105,12 +117,12 @@ class ForgotPasswordPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Por favor, insira seu email para redefinir a senha.',
-                style: TextStyle(fontSize: 16),
-                textAlign: TextAlign.center,
+                'Crie sua Conta',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 40),
               TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   labelText: 'Email',
                   border: OutlineInputBorder(),
@@ -118,14 +130,31 @@ class ForgotPasswordPage extends StatelessWidget {
                 keyboardType: TextInputType.emailAddress,
               ),
               SizedBox(height: 20),
+              TextField(
+                controller: passwordController,
+                decoration: InputDecoration(
+                  labelText: 'Senha',
+                  border: OutlineInputBorder(),
+                ),
+                obscureText: true,
+              ),
+              SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  // implementar a lógica de recuperação de senha
+                  print("Novo Email: ${emailController.text}");
+                  print("Nova Senha: ${passwordController.text}");
+                  Navigator.pop(context); // Volta para a tela de login
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Instruções de recuperação enviadas')),
+                    SnackBar(content: Text('Conta criada com sucesso!')),
                   );
                 },
-                child: Text('Enviar'),
+                child: Text('Cadastrar'),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
               ),
             ],
           ),
