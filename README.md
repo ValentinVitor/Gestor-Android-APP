@@ -1,16 +1,27 @@
-# pac_iv_flutter
 
-A new Flutter project.
+# PAC IV - Projeto de Aprendizagem Extensionista
 
-## Getting Started
+# Gestor - Aplicativo Para Android 👋
 
-This project is a starting point for a Flutter application.
+Olá, tudo bom? Primeiramente, seja bem vindo ao nosso respositório, neste respositório iremos abordar todo nosso processo de planejamento e desenvolvimento do nosso Aplicativo para Android, o **Gestor**.
 
-A few resources to get you started if this is your first Flutter project:
+# Sobre o App 👾
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Nosso aplicativo tem o objetivo de permitir e gerenciar informações sobre o Estoque de produtos do usuário, permitindo gerenciar informações 
+Como: items, quantidades, valores, tipos de produtos. 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Queremos garantir confiabilidade, segurança, organização e o mais importante de tudo, funcionalidade.
+
+# Participantes do Projeto 👥
+- Guilherme Theis **(PO)**
+- Jonas Arcuri **(Desenvolvedor)**
+- Paulo Henrique Scheidt **(Scrum Master)**
+- Vitor Alexandre **(Desenvolvedor)**
+
+## Stack utilizada 🛠
+
+**Frameworks:** Flutter.
+
+**Front-end:** Dart.
+
+**Back-end:** Javascript, Node, Express, MySQL.
